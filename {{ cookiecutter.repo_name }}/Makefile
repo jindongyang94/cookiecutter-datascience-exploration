@@ -50,22 +50,10 @@ else
 endif
 	@echo "After activating your environment, run\nmake requirements\nto install the needed requirements into the environment"
 
-# Start Environment (Recommended to install Conda to create and install virtual environments)
-start_environment:
-ifeq (True,$(HAS_CONDA))
-	conda activate $(PROJECT_NAME)
-else
-	workon $(PROJECT_NAME)
-endif
-
 ## Install Python Dependencies
-requirements: test_environment
+requirements:
 	$(PYTHON_INTERPRETER) -m pip install -U pip setuptools wheel
 	$(PYTHON_INTERPRETER) -m pip install -r requirements.txt
-
-## Test python environment is setup correctly
-test_environment:
-	$(PYTHON_INTERPRETER) test_environment.py
 	
 #################################################################################
 # PROJECT RULES                                                                 #

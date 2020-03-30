@@ -38,8 +38,7 @@ The directory structure of your new project looks like this:
 │   ├── __init__.py    <- Makes src a Python module
 │   │
 │   ├── config      <- Specifications used to determine fields, parameters etc. for preprocessing, 
-│   │   │              modeling etc.
-│   │   └── template_model_specifications.yaml
+│   │                  modeling etc.
 │   │
 │   ├── utilities      <- Scripts for common functions used. The scripts can be split into company 
 │   │   │                 functions (functions used across all projects) and local functions (functions 
