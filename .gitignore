@@ -1,0 +1,41 @@
+docs/site/
+
+# OSX Junk
+*.DS_Store
+*.DS_STORE
+
+# Test Cache
+.cache/*
+tests/__pycache__/*
+*.pytest_cache/
+
+### Vim ###
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~
+
+# Workspace Files
+*.sublime-workspace
+*.vscode*
+*.env
+*.idea
+*.xml
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+
+# Python
+__pycache__
+*.pyc
+*.ipynb_checkpoints
+
+# Mypy cache
+.mypy_cache/
+*.mypy*
+
+# Media
+*.mp4
+*.mov

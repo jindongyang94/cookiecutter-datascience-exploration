@@ -1,0 +1,10 @@
+{
+    "project_name": "Purpose of this project: [POC, API, Production etc.]",
+    "client_name": "The client we are engaging in this project",
+    "country_code": "For which country are we doing this for [SGP, THA, VNM, IDN etc.]",
+    "repo_name": "{{ cookiecutter.client_name.upper().replace(' ', '_') + '-' + cookiecutter.country_code.upper().replace(' ', '_') + '_' + cookiecutter.project_name.lower().replace(' ', '_')}}",
+    "author_name": "Your name (or your organization/company/team)",
+    "description": "A short description of the project.",
+    "open_source_license": ["MIT", "BSD-3-Clause", "No license file"],
+    "python_interpreter": ["python3", "python"]
+}

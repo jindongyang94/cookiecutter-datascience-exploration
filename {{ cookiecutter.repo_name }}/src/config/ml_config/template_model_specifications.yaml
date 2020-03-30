@@ -1,0 +1,63 @@
+# Main Model Filename
+model_filename: 'model1_latest.model'
+model_archive_filename: 'model1_timestamp.model'
+
+# Key Columns
+key_cols: []
+label: 'LABEL_1'
+# Key Date Column to generate Out of Time Validation and Test sets
+date_col: ''
+
+# Key Model Properties
+model_name: ''
+text_0_class: ''
+text_1_class: ''
+prob_threshold: 0.5
+
+# All Category Columns
+categorical_cols: []
+
+# Numeric Columns
+numeric_cols: []
+
+# Drop Columns - post result information
+drop_cols: []
+
+# Configuration Parameters
+model_parameters:
+  # parameters used for initialization
+  initialization:
+      objective: binary
+      num_leaves: 35
+      learning_rate: 0.1
+      n_estimators: 3000
+      max_depth: 8
+      min_data_in_leaf: 20
+      feature_fraction: 0.8
+      bagging_fraction: 0.8
+      bagging_freq: 5
+      seed: 2020
+  
+  # parameters used for increment training
+  increment:
+    objective: binary
+    num_leaves: 35
+    learning_rate: 0.1
+    n_estimators: 2000
+    max_depth: 8
+    min_data_in_leaf: 20
+    feature_fraction: 0.8
+    bagging_fraction: 0.8
+    bagging_freq: 5
+    seed: 2020
+
+  # Gridsearch Parameters if we need to optimize
+  gridsearch:
+    num_leaves: [20, 25, 30, 35, 40, 45, 50]                 # number of leaves in full tree - default 31
+    learning_rate: [0.5, 0.3, 0.1, 0.05, 0.01]               # determines the impact of each tree on the final outcome
+    n_estimators: [300, 500, 700, 900]                       # number of boosting iterations - default = 100 same as num_iterations
+    max_depth : [5, 8, 11, 15]                               # maximum depth of tree - handle overfitting
+    min_data_in_leaf: [15, 20, 25]                           # the minimum number of the records a leaf may have - the default value is 20, optimum value
+    max_bin: [63, 100, 200, 255]                             # maximum number of bin that feature value will bucket in
+    boosting: ['gbdt', 'dart']                               # defines the type of algorithm you want to run - dart recommended for better accuracy
+    bagging_freq: [5, 8, 10]                                  # number of bagging sets
